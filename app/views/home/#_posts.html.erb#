@@ -1,0 +1,17 @@
+<% @posts.each do |post| %>
+  <a class="youtube" href="#" rel="<%= get_video_id post.thumbnail %>" title="<%= post.title %>"><%= image_tag post.thumbnail, :title => post.title, :size =>"120x90" %>
+  </a>
+  <!--<%= link_to (image_tag post.thumbnail), "#", :class => "post_content" %> -->
+<% end %>
+
+<div class="show_all">Show All</div>
+<!--<script>
+$("a.post_content").click(function(){
+alert("user clicked on Right Section")
+});
+</script>-->
+      <script type="text/javascript">
+        $(function () {
+            $("a.youtube").YouTubePopup({ autoplay: 0 });            
+        });
+    </script>

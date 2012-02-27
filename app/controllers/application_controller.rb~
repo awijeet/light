@@ -1,0 +1,7 @@
+class ApplicationController < ActionController::Base
+  protect_from_forgery
+  
+  def get_facebook_connect_url
+   
+  end
+end

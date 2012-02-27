@@ -1,0 +1,28 @@
+<link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" rel="stylesheet" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<!--<script type="text/javascript" src="http://lab.abhinayrathore.com/jquery_youtube/jquery.youtubepopup.js?1352549893"></script>-->
+<div class="left_section">
+<% if @keywords.empty? %>
+<ul>
+<% else %>
+  <% @keywords.each do |keyword| %>
+  <li class="keyword">
+    <%= link_to keyword.name, "/render_record/#{keyword._id.to_s}" %>
+  </li>
+<% end %>
+</ul>
+<% end %>
+</div>
+<div class="right_section">
+  
+</div>
+<div class="clear">
+  
+</div>
+<script>
+$("li.keyword a").click(function(){
+    $.getScript(this)
+    return false;
+    });
+</script>
+<%= paginate @keywords %>

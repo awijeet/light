@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+li.keyword{    
+    background: #1A1A1A;
+    width: 200px;
+    padding: 10px;
+    margin: 12px;
+    border-radius: 5px;
+    font-family: monospace;    
+}
+li.keyword a{
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+li.keyword a:hover{
+    color: red;
+}
+
+.left_section{
+    float: left;
+    min-width: 240px;
+    background-color: red;
+    border-radius: 8px;
+}
+.right_section{
+    background-color: red;
+    border-radius: 8px 8px 8px 8px;
+    float: right;
+    padding-left: 5px;
+    padding-top: 5px;
+    width: 618px;
+    
+}
+.clear{
+    clear: both;
+}
+
+#user-navigation ul li a:hover{
+     background: #cc0000;
+  padding: 1px 4px;
+  -moz-border-radius: 4px;
+	-webkit-border-radius: 3px;
+}
+nav.pagination{
+height: 30px;
+margin-top: 10px;
+}
+#search_form{
+    width: 400px;
+overflow: hidden;
+float: left;
+margin-top: -5%;
+margin-left: 36%;
+}
+input[type=text] { 
+width: 300px; 
+background-color: #fff;
+height: 25px;
+border-radius: 5px
+} 
+#footer{
+	position: fixed;
+    bottom: -30px;
+    width: 97%;
+}
