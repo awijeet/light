@@ -2,6 +2,8 @@ set :application, "rubyonrails4ror"
 set :repository,  "git@github.com:awijeet/light.git"
 set :scm, :git
 set :branch, 'master'
+set :user, "root"
+set :use_sudo, false
 set :deploy_to, "/var/apps/#{application}"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
