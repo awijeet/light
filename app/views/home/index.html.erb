@@ -7,7 +7,7 @@
 <% else %>
   <% @keywords.each do |keyword| %>
   <li class="keyword">
-    <%= link_to keyword.name, "/render_record/#{keyword._id.to_s}" %>
+    <%= link_to keyword.name.capitalize, "/render_record/#{keyword._id.to_s}", :id => "#{keyword.name.capitalize}" %>
   </li>
 <% end %>
 </ul>
@@ -21,7 +21,8 @@
 </div>
 <script>
 $("li.keyword a").click(function(){
-    $.getScript(this)
+    $.getScript(this); 
+    document.title = this.id+ " | Home";
     return false;
     });
 </script>

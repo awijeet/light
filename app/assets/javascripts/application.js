@@ -15,3 +15,6 @@
 //= require_tree .
 //= require jquery-ui
 //= require autocomplete-rails
+$(document).ready(function() {    
+  $(".left_section li:first a").trigger('click');    
+});

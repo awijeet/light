@@ -20,7 +20,11 @@ class HomeController < ApplicationController
   def render_record
     id = params[:id]
     #keyword = Keyword.where(_id: id).first
-    @posts = Post.where(keyword_id: id).limit(25)
+    if request.xhr?
+      @posts = Post.where(keyword_id: id).limit(25)
+    else
+      @posts = Post.where(keyword_id: id).page(params[:page]).per(50)
+    end
     #render :text => @posts.count and return
     respond_to do |format|
       format.js      

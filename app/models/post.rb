@@ -21,7 +21,7 @@ class Post
 	def self.youtube_crawler 
 		require 'youtube_it'
 		client = YouTubeIt::Client.new
-		keywords = Keyword.all
+		keywords = Keyword.where(youtube_crawled: "0")
 		keywords.each do |c|
 			k = c.name			
 				videos_search = client.videos_by(:query => "#{k}", :per_page => 50)
@@ -41,7 +41,16 @@ class Post
 						post.save!											
 					rescue => e
 						puts  e.message 
-					end					
+					end		
+
+					 begin
+					 	c.youtube_crawled = 1
+					 	c.save!				
+					 rescue Exception => e
+					 	p e.message		
+					 end
+              
+					
 			end 
 		end	
 	end
@@ -169,8 +178,8 @@ class Post
 	end
 	def self.crawler
 		youtube_crawler
-		#facebook_crawler
-		#twitter_crawler
-		#vimeo_crawler
+		facebook_crawler
+		twitter_crawler
+		vimeo_crawler
 	end
 end

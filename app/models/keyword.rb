@@ -4,6 +4,10 @@ class Keyword
   #include Mongoid::Search
   include Mongoid::Searchable
   field :name, type:String
+  field :youtube_crawled, type:Integer, :default => 0
+  field :vimeo_crawled, type:Integer, :default => 0
+  field :facebook_crawled, type:Integer, :default => 0
+  field :twitter_crawled, type:Integer, :default => 0
   #index :name, unique: true
   embeds_many :posts
   
@@ -21,7 +25,7 @@ class Keyword
         begin
           Keyword.create(:name => keyword.content)        	
         rescue =>  e
-            
+           puts e.message 
         end	
       end		
       Post.crawler

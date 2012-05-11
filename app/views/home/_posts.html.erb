@@ -1,6 +1,15 @@
 <% @posts.each do |post| %>
-  <a class="youtube" href="#" rel="<%= get_video_id post.thumbnail %>" title="<%= post.title %>"><%= image_tag post.thumbnail, :title => post.title, :size =>"120x90" %>
-  </a>
+	<% if PostCategory.find(post.post_category_id).name == "Youtube" %>
+		<a class="youtube" href="#" rel="<%= get_video_id post.thumbnail %>" title="<%= post.title %>"><%= image_tag post.thumbnail, :title => post.title, :size =>"120x90" %>
+        </a>
+        <% # TODO templating for facebook and twitter content is required  %>
+    <% elsif PostCategory.find(post.post_category_id).name == "Facebook" || PostCategory.find(post.post_category_id).name == "Twitter" %>
+       <%= image_tag post.thumbnail, :title => post.title, :size => "120x90" %>
+    	    
+    <% else %>
+    	<%= PostCategory.find(post.post_category_id).name %>    
+	<% end %>
+  
   <!--<%= link_to (image_tag post.thumbnail), "#", :class => "post_content" %> -->
 <% end %>
 
