@@ -140,9 +140,9 @@
 #  run "cd #{current_path}; #{rake} #{cmd}"
 #end
 
-require "rvm/capistrano"
+#require "rvm/capistrano"
 require 'bundler/capistrano'
-load 'deploy/assets'
+#load 'deploy/assets'
 
 set :rvm_type, :system
 
