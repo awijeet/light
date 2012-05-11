@@ -7,7 +7,7 @@ set :use_sudo, false
 set :deploy_via, :copy
 set :deploy_to, "/var/apps/#{application}"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-
+#/var/apps/rubyonrails4ror/current/public
 role :web, "208.111.45.210"                          # Your HTTP server, Apache/etc
 role :app, "208.111.45.210"                          # This may be the same as your `Web` server
 role :db,  "208.111.45.210", :primary => true # This is where Rails migrations will run

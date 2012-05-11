@@ -1,5 +1,0 @@
-<% @posts.each do |post| %>
-  <a class="youtube" href="#" rel="<%= get_video_id post.thumbnail %>" title="<%= post.title %>"><%= image_tag post.thumbnail, :title => post.title %>
-  </a>
-<% end %>
-
