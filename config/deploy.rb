@@ -25,4 +25,5 @@ namespace :deploy do
   task :restart, roles: :app, except: { no_release: true } do
     run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+  set :bundle_cmd, 'source $HOME/.bash_profile && bundle'
 end
