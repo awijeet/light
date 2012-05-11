@@ -16,9 +16,9 @@ set :user,            "deployer"
 set :group,           "staff"
 set :use_sudo,        false
 
-role :web,    "123.456.789.012"
-role :app,    "123.456.789.012"
-role :db,     "123.456.789.012", :primary => true
+role :web,    "208.111.45.210"
+role :app,    "208.111.45.210"
+role :db,     "208.111.45.210", :primary => true
 
 set(:latest_release)  { fetch(:current_path) }
 set(:release_path)    { fetch(:current_path) }
