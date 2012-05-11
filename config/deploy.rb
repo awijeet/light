@@ -149,8 +149,11 @@ set :rvm_type, :system
 set :bundle_flags, ""
 set :bundle_dir, ""
 
-set :user, "root"
-set :use_sudo, false
+#set :user, "root"
+#set :use_sudo, false
+set :user,            "deployer"
+set :group,           "staff"
+set :use_sudo,        false
 
 set :application, "rubyonrails4ror"
 set :repository,  "git@github.com:awijeet/light.git"
