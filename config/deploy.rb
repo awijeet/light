@@ -1,9 +1,8 @@
 require "rvm/capistrano"
 require 'bundler/capistrano'
 load 'deploy/assets'
-
-set :rvm_type, :system
-
+set :rvm_ruby_string, '1.9.2'
+set :rvm_type, :user  # Don't use system-wide RVM
 set :bundle_flags, ""
 set :bundle_dir, ""
 
