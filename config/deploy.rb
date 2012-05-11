@@ -1,7 +1,7 @@
 require "rvm/capistrano"
 require 'bundler/capistrano'
 load 'deploy/assets'
-set :rvm_ruby_string, '1.9.2'
+
 set :rvm_type, :user  # Don't use system-wide RVM
 set :bundle_flags, ""
 set :bundle_dir, ""
@@ -25,7 +25,4 @@ namespace :deploy do
   task :restart, roles: :app, except: { no_release: true } do
     run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
-  task :bundle_gems do
-    run "cd #{deploy_to}/current && export PATH=/usr/local/pgsql/bin:/opt/ruby-enterprise-X.X.X/bin:$PATH && bundle install vendor/gems"
-end
 end
