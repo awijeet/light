@@ -26,4 +26,7 @@ namespace :deploy do
   task :restart, roles: :app, except: { no_release: true } do
     run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+  task :trust_rvmrc do
+    run "rvm rvmrc trust #{latest_release}"
+end
 end
